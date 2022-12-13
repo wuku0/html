@@ -1,0 +1,27 @@
+<html>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var randomColors = document.createElement('div');
+randomColors.innerHTML = '<div id="randomColors"></div>';
+document.body.appendChild(randomColors);
+var randomColorsDiv = document.getElementById('randomColors');
+for (var i = 0; i < 100; i++) {
+  var randomColor = document.createElement('div');
+  randomColor.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+  randomColor.style.width = '100px';
+  randomColor.style.height = '100px';
+  randomColor.style.float = 'left';
+  randomColorsDiv.appendChild(randomColor);
+}
+
+var refreshButton = document.createElement('div');
+refreshButton.innerHTML = '<button id="refreshButton">Refresh</button>';
+document.body.appendChild(refreshButton);
+var refreshButton = document.getElementById('refreshButton');
+refreshButton.onclick = function() {
+  location.reload();
+};
+});
+        </script>
+</html>
