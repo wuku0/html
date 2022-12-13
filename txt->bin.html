@@ -1,0 +1,32 @@
+<html>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var input = document.createElement('input');
+input.type = 'text';
+input.id = 'input';
+document.body.appendChild(input);
+var button = document.createElement('button');
+button.innerHTML = 'Convert';
+button.id = 'button';
+button.style.backgroundColor = 'red';
+document.body.appendChild(button);
+var output = document.createElement('div');
+output.id = 'output';
+document.body.appendChild(output);
+button.onclick = function() {
+  var text = document.getElementById('input').value;
+  var binary = '';
+  for (var i = 0; i < text.length; i++) {
+    binary += text[i].charCodeAt(0).toString(2) + ' ';
+  }
+  document.getElementById('output').innerHTML = binary;
+  if (button.style.backgroundColor == 'red') {
+    button.style.backgroundColor = 'yellow';
+  } else {
+    button.style.backgroundColor = 'red';
+  }
+};
+});
+        </script>
+</html>
