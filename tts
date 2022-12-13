@@ -1,0 +1,20 @@
+<html>
+
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var textToSpeech = document.createElement('div');
+textToSpeech.innerHTML = '<input type="text" id="textToSpeechInput" placeholder="Type here to hear it spoken."><button id="textToSpeechButton">Speak</button>';
+document.body.appendChild(textToSpeech);
+
+var textToSpeechInput = document.getElementById('textToSpeechInput');
+var textToSpeechButton = document.getElementById('textToSpeechButton');
+
+textToSpeechButton.addEventListener('click', function() {
+  var msg = new SpeechSynthesisUtterance(textToSpeechInput.value);
+  window.speechSynthesis.speak(msg);
+});
+});
+        </script>
+
+</html>
